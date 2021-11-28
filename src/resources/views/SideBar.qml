@@ -37,16 +37,16 @@ Rectangle {
         anchors.right: parent.right
         anchors.top: titleButton.bottom
         anchors.margins: 12
-        placeholder: qsTr("Search Everything here!")
+        placeholder: qsTr("Search here...")
     }
 
     ListView {
         id: libraryList
         anchors.left: parent.left
         anchors.right: parent.right
-        anchors.top: playerPageButton.bottom
+        anchors.top: globalSearchBox.bottom
         anchors.topMargin: 12
-        anchors.bottom: settingsButton.top
+        anchors.bottom: parent.top
         anchors.bottomMargin: 12
 
         delegate: ActiveTab {
@@ -58,24 +58,6 @@ Rectangle {
             showIcon: true
             icon: "qrc:/assets/document-edit.svg"
             isTabActive: index === libraryList.currentIndex
-        }
-    }
-
-    ActiveTab {
-        id: settingsButton
-        height: 36
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: 6
-        flat: true
-        border.color: "transparent"
-        showIcon: true
-        icon: "qrc:/assets/settings.svg"
-        text: qsTr("Settings")
-        isTabActive: display.activeTabIndex === -2
-        onClicked: {
-            display.activeTabIndex = -2
         }
     }
 

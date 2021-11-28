@@ -4,9 +4,11 @@ Yet another MarkDown editor, open source!
 
 ## Development Status
 
-Creating new folders... XD
+now it works:
 
-let's see it one week later.
+![](arts/screenshot.png)
+
+thanks to [project vditor](https://github.com/Vanessa219/vditor)
 
 ## LICENSE
 

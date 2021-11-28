@@ -101,27 +101,27 @@ Rectangle {
                 }
                 model: ListModel {
                     ListElement {
-                        itemText: "Select All"
-                        itemIcon: "qrc:/assets/select-all.svg"
+                        itemText: qsTr("Select All")
+                        itemIcon: "qrc:/assets/stack.svg"
                         itemId: 0
                     }
                     ListElement {
-                        itemText: "Copy"
+                        itemText: qsTr("Copy")
                         itemIcon: "qrc:/assets/copy.svg"
                         itemId: 1
                     }
                     ListElement {
-                        itemText: "Cut"
+                        itemText: qsTr("Cut")
                         itemIcon: "qrc:/assets/cut.svg"
                         itemId: 2
                     }
                     ListElement {
-                        itemText: "Paste"
+                        itemText: qsTr("Paste")
                         itemIcon: "qrc:/assets/clipboard.svg"
                         itemId: 3
                     }
                     ListElement {
-                        itemText: "Undo"
+                        itemText: qsTr("Undo")
                         itemIcon: "qrc:/assets/undo.svg"
                         itemId: 4
                     }

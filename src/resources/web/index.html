@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TypRua</title>
+    <link rel="stylesheet" href="./typrua.css" />
+    <style type="text/css">
+        html , body {
+            height: 100%;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .vditor {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        </style>
+</head>
+
+<body>
+    <div id="vditor" class="vditor"></div>
+</body>
+
+</html>
+<script src="./typrua.js"></script>
+<script>
+    const vditor = new Vditor('vditor', {
+        "theme": "light",
+        "cache": {
+            "enable": false
+        },
+        "preview": {
+            "theme": {
+                "current": "light"
+            }
+        }
+    })
+</script>

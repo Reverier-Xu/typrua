@@ -6,8 +6,7 @@ import "../components"
 
 Rectangle {
     id: root
-    color: display.colorStyle ? "#a0ffffff":"#d0000000"
-    opacity: display.mouseIsActive ? 1 : 0
+    color: display.colorStyle ? "white" : "black"
     Behavior on opacity {
         NumberAnimation {
             duration: 100
@@ -18,11 +17,12 @@ Rectangle {
             duration: 280
         }
     }
+
     height: 32
 
     IconButton {
         id: closeButton
-        icon: "qrc:/assets/close.svg"
+        icon: "qrc:/assets/dismiss.svg"
         iconSize: 16
         pressedColor: "#ccee0000"
         hoverColor: "#aaff0000"
@@ -39,7 +39,7 @@ Rectangle {
 
     IconButton {
         id: maximizeButton
-        icon: window.visibility === Window.Windowed?"qrc:/assets/maximize.svg":"qrc:/assets/restore.svg"
+        icon: window.visibility === Window.Windowed ? "qrc:/assets/maximize.svg" : "qrc:/assets/restore.svg"
         iconSize: 16
         flat: true
         anchors.right: closeButton.left
@@ -57,7 +57,7 @@ Rectangle {
 
     IconButton {
         id: minimizeButton
-        icon: "qrc:/assets/minimize.svg"
+        icon: "qrc:/assets/subtract.svg"
         iconSize: 16
         flat: true
         anchors.right: maximizeButton.left
@@ -72,7 +72,7 @@ Rectangle {
 
     IconButton {
         id: colorStyleButton
-        icon: display.colorStyle ? "qrc:/assets/sun.svg" : "qrc:/assets/moon.svg"
+        icon: display.colorStyle ? "qrc:/assets/weather-sunny.svg" : "qrc:/assets/weather-moon.svg"
         iconSize: 16
         flat: true
         anchors.right: minimizeButton.left

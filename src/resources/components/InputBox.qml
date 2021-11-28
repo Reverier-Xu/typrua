@@ -64,7 +64,7 @@ Rectangle {
                 model: ListModel {
                     ListElement {
                         itemText: "Select All"
-                        itemIcon: "qrc:/assets/select-all.svg"
+                        itemIcon: "qrc:/assets/stack.svg"
                         itemId: 0
                     }
                     ListElement {

@@ -1,5 +1,33 @@
 <RCC>
     <qresource prefix="/">
+        <file>components/Switch.qml</file>
+        <file>components/VerticalStepSlider.qml</file>
+        <file>components/TextLabel.qml</file>
+        <file>components/ProgressBar.qml</file>
+        <file>components/PushArea.qml</file>
+        <file>components/UXScrollBar.qml</file>
+        <file>components/HorizontalStepSlider.qml</file>
+        <file>components/ContentMenu.qml</file>
+        <file>components/SliderBar.qml</file>
+        <file>components/MenuButton.qml</file>
+        <file>components/PushButton.qml</file>
+        <file>components/ActiveTab.qml</file>
+        <file>components/Loader.qml</file>
+        <file>components/InputArea.qml</file>
+        <file>components/CircleSliderButton.qml</file>
+        <file>components/SearchBox.qml</file>
+        <file>components/IconButton.qml</file>
+        <file>components/KeyTapEvent.qml</file>
+        <file>components/RadioButton.qml</file>
+        <file>components/ShortcutEvent.qml</file>
+        <file>components/CircleSliderArea.qml</file>
+        <file>components/TimeButton.qml</file>
+        <file>components/InputBox.qml</file>
+        <file>components/FluentWindow.qml</file>
+        <file>views/Editor.qml</file>
+        <file>views/MainWindow.qml</file>
+        <file>views/SideBar.qml</file>
+        <file>views/TitleBar.qml</file>
         <file>assets/arrow-step-out.svg</file>
         <file>assets/music-note-2.svg</file>
         <file>assets/balloon.svg</file>
@@ -31,6 +59,7 @@
         <file>assets/edit-arrow-back.svg</file>
         <file>assets/chat-dismiss.svg</file>
         <file>assets/eye-show.svg</file>
+        <file>assets/logo.svg</file>
         <file>assets/design-ideas.svg</file>
         <file>assets/globe-clock.svg</file>
         <file>assets/cart.svg</file>
@@ -152,6 +181,7 @@
         <file>assets/square-add.svg</file>
         <file>assets/vehicle-car-collision.svg</file>
         <file>assets/people-list.svg</file>
+        <file>assets/database.svg</file>
         <file>assets/folder-zip.svg</file>
         <file>assets/premium.svg</file>
         <file>assets/arrow-hook-down-left.svg</file>
@@ -191,6 +221,7 @@
         <file>assets/apps-add-in.svg</file>
         <file>assets/ticket-diagonal.svg</file>
         <file>assets/arrow-step-in-left.svg</file>
+        <file>assets/cut.svg</file>
         <file>assets/call-prohibited.svg</file>
         <file>assets/resize-small.svg</file>
         <file>assets/prohibited.svg</file>
@@ -208,6 +239,7 @@
         <file>assets/window-dev-edit.svg</file>
         <file>assets/animal-cat.svg</file>
         <file>assets/add.svg</file>
+        <file>assets/data-pie.svg</file>
         <file>assets/edit-off.svg</file>
         <file>assets/flow.svg</file>
         <file>assets/checkmark-circle.svg</file>
@@ -261,7 +293,6 @@
         <file>assets/stop.svg</file>
         <file>assets/globe-star.svg</file>
         <file>assets/document-copy.svg</file>
-        <file>assets/database-24.svg</file>
         <file>assets/chevron-up-down.svg</file>
         <file>assets/arrow-step-back.svg</file>
         <file>assets/arrow-clockwise.svg</file>
@@ -372,9 +403,7 @@
         <file>assets/document-question-mark.svg</file>
         <file>assets/chevron-down.svg</file>
         <file>assets/key-command.svg</file>
-        <file>assets/cut-24.svg</file>
         <file>assets/headset.svg</file>
-        <file>assets/data-pie-24.svg</file>
         <file>assets/attach.svg</file>
         <file>assets/arrow-hook-up-left.svg</file>
         <file>assets/chevron-up.svg</file>
@@ -464,5 +493,306 @@
         <file>assets/luggage.svg</file>
         <file>assets/chevron-left.svg</file>
         <file>assets/star-off.svg</file>
+        <file>web/index.html</file>
+        <file>web/vditor-3.8.7.tgz</file>
+        <file>web/typrua.css</file>
+        <file>web/typrua.js</file>
+        <file>web/dist/index.min.js</file>
+        <file>web/dist/index.d.ts</file>
+        <file>web/dist/index.css</file>
+        <file>web/dist/method.d.ts</file>
+        <file>web/dist/method.min.js</file>
+        <file>web/dist/js/.DS_Store</file>
+        <file>web/dist/js/highlight.js/highlight.pack.js</file>
+        <file>web/dist/js/highlight.js/styles/murphy.css</file>
+        <file>web/dist/js/highlight.js/styles/borland.css</file>
+        <file>web/dist/js/highlight.js/styles/trac.css</file>
+        <file>web/dist/js/highlight.js/styles/rrt.css</file>
+        <file>web/dist/js/highlight.js/styles/rainbow_dash.css</file>
+        <file>web/dist/js/highlight.js/styles/solarized-dark256.css</file>
+        <file>web/dist/js/highlight.js/styles/manni.css</file>
+        <file>web/dist/js/highlight.js/styles/tango.css</file>
+        <file>web/dist/js/highlight.js/styles/algol.css</file>
+        <file>web/dist/js/highlight.js/styles/perldoc.css</file>
+        <file>web/dist/js/highlight.js/styles/lovelace.css</file>
+        <file>web/dist/js/highlight.js/styles/vs.css</file>
+        <file>web/dist/js/highlight.js/styles/dracula.css</file>
+        <file>web/dist/js/highlight.js/styles/xcode.css</file>
+        <file>web/dist/js/highlight.js/styles/monokai.css</file>
+        <file>web/dist/js/highlight.js/styles/paraiso-dark.css</file>
+        <file>web/dist/js/highlight.js/styles/arduino.css</file>
+        <file>web/dist/js/highlight.js/styles/colorful.css</file>
+        <file>web/dist/js/highlight.js/styles/fruity.css</file>
+        <file>web/dist/js/highlight.js/styles/paraiso-light.css</file>
+        <file>web/dist/js/highlight.js/styles/pastie.css</file>
+        <file>web/dist/js/highlight.js/styles/friendly.css</file>
+        <file>web/dist/js/highlight.js/styles/algol_nu.css</file>
+        <file>web/dist/js/highlight.js/styles/native.css</file>
+        <file>web/dist/js/highlight.js/styles/github.css</file>
+        <file>web/dist/js/highlight.js/styles/solarized-light.css</file>
+        <file>web/dist/js/highlight.js/styles/solarized-dark.css</file>
+        <file>web/dist/js/highlight.js/styles/igor.css</file>
+        <file>web/dist/js/highlight.js/styles/emacs.css</file>
+        <file>web/dist/js/highlight.js/styles/ant-design.css</file>
+        <file>web/dist/js/highlight.js/styles/autumn.css</file>
+        <file>web/dist/js/highlight.js/styles/vim.css</file>
+        <file>web/dist/js/highlight.js/styles/bw.css</file>
+        <file>web/dist/js/highlight.js/styles/pygments.css</file>
+        <file>web/dist/js/highlight.js/styles/monokailight.css</file>
+        <file>web/dist/js/highlight.js/styles/abap.css</file>
+        <file>web/dist/js/highlight.js/styles/swapoff.css</file>
+        <file>web/dist/js/i18n/ja_JP.js</file>
+        <file>web/dist/js/i18n/en_US.js</file>
+        <file>web/dist/js/i18n/ru_RU.js</file>
+        <file>web/dist/js/i18n/zh_TW.js</file>
+        <file>web/dist/js/i18n/zh_CN.js</file>
+        <file>web/dist/js/i18n/ko_KR.js</file>
+        <file>web/dist/js/echarts/echarts.min.js</file>
+        <file>web/dist/js/icons/ant.js</file>
+        <file>web/dist/js/icons/material.js</file>
+        <file>web/dist/js/flowchart.js/flowchart.min.js</file>
+        <file>web/dist/js/abcjs/abcjs_basic.min.js</file>
+        <file>web/dist/js/lute/lute.min.js</file>
+        <file>web/dist/js/lute/.DS_Store</file>
+        <file>web/dist/js/graphviz/viz.js</file>
+        <file>web/dist/js/graphviz/full.render.js</file>
+        <file>web/dist/js/mermaid/mermaid.min.js</file>
+        <file>web/dist/js/mathjax/tex-svg-full.js</file>
+        <file>web/dist/js/mathjax/LICENSE</file>
+        <file>web/dist/js/mathjax/.DS_Store</file>
+        <file>web/dist/js/mathjax/sre/sre-node.js</file>
+        <file>web/dist/js/mathjax/sre/sre_browser.js</file>
+        <file>web/dist/js/mathjax/sre/mathmaps/en.js</file>
+        <file>web/dist/js/mathjax/sre/mathmaps/de.js</file>
+        <file>web/dist/js/mathjax/sre/mathmaps/es.js</file>
+        <file>web/dist/js/mathjax/sre/mathmaps/mathmaps_ie.js</file>
+        <file>web/dist/js/mathjax/sre/mathmaps/fr.js</file>
+        <file>web/dist/js/mathjax/sre/mathmaps/nemeth.js</file>
+        <file>web/dist/js/mathjax/input/tex-base.js</file>
+        <file>web/dist/js/mathjax/input/tex.js</file>
+        <file>web/dist/js/mathjax/input/asciimath.js</file>
+        <file>web/dist/js/mathjax/input/tex-full.js</file>
+        <file>web/dist/js/mathjax/input/mml.js</file>
+        <file>web/dist/js/mathjax/input/tex/extensions/color.js</file>
+        <file>web/dist/js/mathjax/input/tex/extensions/colorV2.js</file>
+        <file>web/dist/js/mathjax/input/tex/extensions/html.js</file>
+        <file>web/dist/js/mathjax/input/tex/extensions/mhchem.js</file>
+        <file>web/dist/js/mathjax/input/tex/extensions/autoload.js</file>
+        <file>web/dist/js/mathjax/input/tex/extensions/bbox.js</file>
+        <file>web/dist/js/mathjax/input/tex/extensions/configMacros.js</file>
+        <file>web/dist/js/mathjax/input/tex/extensions/noundefined.js</file>
+        <file>web/dist/js/mathjax/input/tex/extensions/all-packages.js</file>
+        <file>web/dist/js/mathjax/input/tex/extensions/unicode.js</file>
+        <file>web/dist/js/mathjax/input/tex/extensions/enclose.js</file>
+        <file>web/dist/js/mathjax/input/tex/extensions/physics.js</file>
+        <file>web/dist/js/mathjax/input/tex/extensions/ams.js</file>
+        <file>web/dist/js/mathjax/input/tex/extensions/verb.js</file>
+        <file>web/dist/js/mathjax/input/tex/extensions/require.js</file>
+        <file>web/dist/js/mathjax/input/tex/extensions/newcommand.js</file>
+        <file>web/dist/js/mathjax/input/tex/extensions/boldsymbol.js</file>
+        <file>web/dist/js/mathjax/input/tex/extensions/cancel.js</file>
+        <file>web/dist/js/mathjax/input/tex/extensions/textmacros.js</file>
+        <file>web/dist/js/mathjax/input/tex/extensions/bussproofs.js</file>
+        <file>web/dist/js/mathjax/input/tex/extensions/tagFormat.js</file>
+        <file>web/dist/js/mathjax/input/tex/extensions/action.js</file>
+        <file>web/dist/js/mathjax/input/tex/extensions/noerrors.js</file>
+        <file>web/dist/js/mathjax/input/tex/extensions/extpfeil.js</file>
+        <file>web/dist/js/mathjax/input/tex/extensions/amscd.js</file>
+        <file>web/dist/js/mathjax/input/tex/extensions/braket.js</file>
+        <file>web/dist/js/mathjax/input/mml/entities.js</file>
+        <file>web/dist/js/mathjax/a11y/semantic-enrich.js</file>
+        <file>web/dist/js/mathjax/a11y/explorer.js</file>
+        <file>web/dist/js/mathjax/a11y/complexity.js</file>
+        <file>web/dist/js/mathjax/a11y/assistive-mml.js</file>
+        <file>web/dist/js/katex/katex.min.css</file>
+        <file>web/dist/js/katex/katex.min.js</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Math-Italic.woff</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Size4-Regular.ttf</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Caligraphic-Bold.woff</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Fraktur-Regular.woff</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Size1-Regular.woff2</file>
+        <file>web/dist/js/katex/fonts/KaTeX_SansSerif-Bold.woff</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Caligraphic-Bold.ttf</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Typewriter-Regular.woff2</file>
+        <file>web/dist/js/katex/fonts/KaTeX_SansSerif-Bold.woff2</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Size1-Regular.woff</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Fraktur-Bold.ttf</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Typewriter-Regular.woff</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Main-BoldItalic.ttf</file>
+        <file>web/dist/js/katex/fonts/KaTeX_SansSerif-Regular.ttf</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Typewriter-Regular.ttf</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Main-Italic.woff2</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Main-Italic.ttf</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Fraktur-Bold.woff</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Math-BoldItalic.woff</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Main-Regular.ttf</file>
+        <file>web/dist/js/katex/fonts/KaTeX_SansSerif-Regular.woff2</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Math-BoldItalic.ttf</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Script-Regular.ttf</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Size2-Regular.woff2</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Main-Regular.woff</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Main-Italic.woff</file>
+        <file>web/dist/js/katex/fonts/KaTeX_AMS-Regular.ttf</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Fraktur-Regular.woff2</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Script-Regular.woff</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Fraktur-Regular.ttf</file>
+        <file>web/dist/js/katex/fonts/KaTeX_AMS-Regular.woff</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Size3-Regular.ttf</file>
+        <file>web/dist/js/katex/fonts/KaTeX_SansSerif-Italic.woff2</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Size2-Regular.woff</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Script-Regular.woff2</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Size2-Regular.ttf</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Caligraphic-Regular.woff2</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Caligraphic-Regular.woff</file>
+        <file>web/dist/js/katex/fonts/KaTeX_SansSerif-Regular.woff</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Math-Italic.ttf</file>
+        <file>web/dist/js/katex/fonts/KaTeX_SansSerif-Bold.ttf</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Size4-Regular.woff</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Size3-Regular.woff2</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Size1-Regular.ttf</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Main-BoldItalic.woff</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Math-Italic.woff2</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Main-BoldItalic.woff2</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Caligraphic-Bold.woff2</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Math-BoldItalic.woff2</file>
+        <file>web/dist/js/katex/fonts/KaTeX_SansSerif-Italic.ttf</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Main-Regular.woff2</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Size3-Regular.woff</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Size4-Regular.woff2</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Main-Bold.woff</file>
+        <file>web/dist/js/katex/fonts/KaTeX_AMS-Regular.woff2</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Main-Bold.ttf</file>
+        <file>web/dist/js/katex/fonts/KaTeX_SansSerif-Italic.woff</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Fraktur-Bold.woff2</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Caligraphic-Regular.ttf</file>
+        <file>web/dist/js/katex/fonts/KaTeX_Main-Bold.woff2</file>
+        <file>web/dist/js/plantuml/plantuml-encoder.min.js</file>
+        <file>web/dist/images/logo.png</file>
+        <file>web/dist/images/img-loading.svg</file>
+        <file>web/dist/images/.DS_Store</file>
+        <file>web/dist/images/emoji/b3log.png</file>
+        <file>web/dist/images/emoji/sym.png</file>
+        <file>web/dist/images/emoji/hacpai.png</file>
+        <file>web/dist/images/emoji/solo.png</file>
+        <file>web/dist/images/emoji/trollface.png</file>
+        <file>web/dist/images/emoji/huaji.gif</file>
+        <file>web/dist/images/emoji/lute.png</file>
+        <file>web/dist/images/emoji/octocat.png</file>
+        <file>web/dist/images/emoji/latke.png</file>
+        <file>web/dist/images/emoji/wulian.png</file>
+        <file>web/dist/images/emoji/doge.png</file>
+        <file>web/dist/images/emoji/pipe.png</file>
+        <file>web/dist/images/emoji/wide.png</file>
+        <file>web/dist/images/emoji/vditor.png</file>
+        <file>web/dist/images/emoji/chainbook.png</file>
+        <file>web/dist/ts/constants.d.ts</file>
+        <file>web/dist/ts/markdown/mermaidRender.d.ts</file>
+        <file>web/dist/ts/markdown/mediaRender.d.ts</file>
+        <file>web/dist/ts/markdown/codeRender.d.ts</file>
+        <file>web/dist/ts/markdown/outlineRender.d.ts</file>
+        <file>web/dist/ts/markdown/mindmapRender.d.ts</file>
+        <file>web/dist/ts/markdown/graphvizRender.d.ts</file>
+        <file>web/dist/ts/markdown/getHTML.d.ts</file>
+        <file>web/dist/ts/markdown/lazyLoadImageRender.d.ts</file>
+        <file>web/dist/ts/markdown/plantumlRender.d.ts</file>
+        <file>web/dist/ts/markdown/mathRender.d.ts</file>
+        <file>web/dist/ts/markdown/adapterRender.d.ts</file>
+        <file>web/dist/ts/markdown/anchorRender.d.ts</file>
+        <file>web/dist/ts/markdown/flowchartRender.d.ts</file>
+        <file>web/dist/ts/markdown/setLute.d.ts</file>
+        <file>web/dist/ts/markdown/highlightRender.d.ts</file>
+        <file>web/dist/ts/markdown/speechRender.d.ts</file>
+        <file>web/dist/ts/markdown/abcRender.d.ts</file>
+        <file>web/dist/ts/markdown/getMarkdown.d.ts</file>
+        <file>web/dist/ts/markdown/previewRender.d.ts</file>
+        <file>web/dist/ts/markdown/chartRender.d.ts</file>
+        <file>web/dist/ts/util/highlightToolbar.d.ts</file>
+        <file>web/dist/ts/util/Options.d.ts</file>
+        <file>web/dist/ts/util/editorCommonEvent.d.ts</file>
+        <file>web/dist/ts/util/hotKey.d.ts</file>
+        <file>web/dist/ts/util/getSelectText.d.ts</file>
+        <file>web/dist/ts/util/hasClosest.d.ts</file>
+        <file>web/dist/ts/util/fixBrowserBehavior.d.ts</file>
+        <file>web/dist/ts/util/log.d.ts</file>
+        <file>web/dist/ts/util/merge.d.ts</file>
+        <file>web/dist/ts/util/addScript.d.ts</file>
+        <file>web/dist/ts/util/hasClosestByHeadings.d.ts</file>
+        <file>web/dist/ts/util/RecordMedia.d.ts</file>
+        <file>web/dist/ts/util/code160to32.d.ts</file>
+        <file>web/dist/ts/util/processCode.d.ts</file>
+        <file>web/dist/ts/util/selection.d.ts</file>
+        <file>web/dist/ts/util/addStyle.d.ts</file>
+        <file>web/dist/ts/util/toc.d.ts</file>
+        <file>web/dist/ts/util/compatibility.d.ts</file>
+        <file>web/dist/ts/hint/index.d.ts</file>
+        <file>web/dist/ts/undo/index.d.ts</file>
+        <file>web/dist/ts/sv/inputEvent.d.ts</file>
+        <file>web/dist/ts/sv/index.d.ts</file>
+        <file>web/dist/ts/sv/process.d.ts</file>
+        <file>web/dist/ts/sv/processKeydown.d.ts</file>
+        <file>web/dist/ts/ir/index.d.ts</file>
+        <file>web/dist/ts/ir/input.d.ts</file>
+        <file>web/dist/ts/ir/process.d.ts</file>
+        <file>web/dist/ts/ir/highlightToolbarIR.d.ts</file>
+        <file>web/dist/ts/ir/processKeydown.d.ts</file>
+        <file>web/dist/ts/ir/expandMarker.d.ts</file>
+        <file>web/dist/ts/upload/index.d.ts</file>
+        <file>web/dist/ts/upload/getElement.d.ts</file>
+        <file>web/dist/ts/upload/setHeaders.d.ts</file>
+        <file>web/dist/ts/outline/index.d.ts</file>
+        <file>web/dist/ts/export/index.d.ts</file>
+        <file>web/dist/ts/toolbar/EditMode.d.ts</file>
+        <file>web/dist/ts/toolbar/InsertAfter.d.ts</file>
+        <file>web/dist/ts/toolbar/Upload.d.ts</file>
+        <file>web/dist/ts/toolbar/Redo.d.ts</file>
+        <file>web/dist/ts/toolbar/Indent.d.ts</file>
+        <file>web/dist/ts/toolbar/CodeTheme.d.ts</file>
+        <file>web/dist/ts/toolbar/Custom.d.ts</file>
+        <file>web/dist/ts/toolbar/index.d.ts</file>
+        <file>web/dist/ts/toolbar/Both.d.ts</file>
+        <file>web/dist/ts/toolbar/Info.d.ts</file>
+        <file>web/dist/ts/toolbar/Br.d.ts</file>
+        <file>web/dist/ts/toolbar/Outdent.d.ts</file>
+        <file>web/dist/ts/toolbar/Record.d.ts</file>
+        <file>web/dist/ts/toolbar/ContentTheme.d.ts</file>
+        <file>web/dist/ts/toolbar/Emoji.d.ts</file>
+        <file>web/dist/ts/toolbar/Export.d.ts</file>
+        <file>web/dist/ts/toolbar/Devtools.d.ts</file>
+        <file>web/dist/ts/toolbar/Preview.d.ts</file>
+        <file>web/dist/ts/toolbar/Headings.d.ts</file>
+        <file>web/dist/ts/toolbar/setToolbar.d.ts</file>
+        <file>web/dist/ts/toolbar/InsertBefore.d.ts</file>
+        <file>web/dist/ts/toolbar/Divider.d.ts</file>
+        <file>web/dist/ts/toolbar/MenuItem.d.ts</file>
+        <file>web/dist/ts/toolbar/Counter.d.ts</file>
+        <file>web/dist/ts/toolbar/Undo.d.ts</file>
+        <file>web/dist/ts/toolbar/Help.d.ts</file>
+        <file>web/dist/ts/toolbar/Outline.d.ts</file>
+        <file>web/dist/ts/toolbar/Fullscreen.d.ts</file>
+        <file>web/dist/ts/preview/image.d.ts</file>
+        <file>web/dist/ts/preview/index.d.ts</file>
+        <file>web/dist/ts/ui/setTheme.d.ts</file>
+        <file>web/dist/ts/ui/setContentTheme.d.ts</file>
+        <file>web/dist/ts/ui/setPreviewMode.d.ts</file>
+        <file>web/dist/ts/ui/initUI.d.ts</file>
+        <file>web/dist/ts/ui/setCodeTheme.d.ts</file>
+        <file>web/dist/ts/devtools/index.d.ts</file>
+        <file>web/dist/ts/wysiwyg/afterRenderEvent.d.ts</file>
+        <file>web/dist/ts/wysiwyg/highlightToolbarWYSIWYG.d.ts</file>
+        <file>web/dist/ts/wysiwyg/renderDomByMd.d.ts</file>
+        <file>web/dist/ts/wysiwyg/index.d.ts</file>
+        <file>web/dist/ts/wysiwyg/showCode.d.ts</file>
+        <file>web/dist/ts/wysiwyg/input.d.ts</file>
+        <file>web/dist/ts/wysiwyg/inlineTag.d.ts</file>
+        <file>web/dist/ts/wysiwyg/setHeading.d.ts</file>
+        <file>web/dist/ts/wysiwyg/processKeydown.d.ts</file>
+        <file>web/dist/ts/wysiwyg/toolbarEvent.d.ts</file>
+        <file>web/dist/ts/resize/index.d.ts</file>
+        <file>web/dist/ts/tip/index.d.ts</file>
+        <file>web/dist/css/content-theme/dark.css</file>
+        <file>web/dist/css/content-theme/wechat.css</file>
+        <file>web/dist/css/content-theme/light.css</file>
+        <file>web/dist/css/content-theme/ant-design.css</file>
+        <file>web/dist/types/index.d.ts</file>
     </qresource>
 </RCC>

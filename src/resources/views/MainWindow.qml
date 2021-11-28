@@ -59,5 +59,6 @@ FluentWindow {
             anchors.bottom: parent.bottom
             anchors.rightMargin: window.visibility === Window.Windowed ? 1 : 0
             anchors.bottomMargin: window.visibility === Window.Windowed ? 1 : 0
+        }
     }
 }
