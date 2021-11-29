@@ -495,14 +495,11 @@
         <file>assets/star-off.svg</file>
         <file>web/index.html</file>
         <file>web/vditor-3.8.7.tgz</file>
-        <file>web/typrua.css</file>
-        <file>web/typrua.js</file>
         <file>web/dist/index.min.js</file>
         <file>web/dist/index.d.ts</file>
         <file>web/dist/index.css</file>
         <file>web/dist/method.d.ts</file>
         <file>web/dist/method.min.js</file>
-        <file>web/dist/js/.DS_Store</file>
         <file>web/dist/js/highlight.js/highlight.pack.js</file>
         <file>web/dist/js/highlight.js/styles/murphy.css</file>
         <file>web/dist/js/highlight.js/styles/borland.css</file>
@@ -553,13 +550,11 @@
         <file>web/dist/js/flowchart.js/flowchart.min.js</file>
         <file>web/dist/js/abcjs/abcjs_basic.min.js</file>
         <file>web/dist/js/lute/lute.min.js</file>
-        <file>web/dist/js/lute/.DS_Store</file>
         <file>web/dist/js/graphviz/viz.js</file>
         <file>web/dist/js/graphviz/full.render.js</file>
         <file>web/dist/js/mermaid/mermaid.min.js</file>
         <file>web/dist/js/mathjax/tex-svg-full.js</file>
         <file>web/dist/js/mathjax/LICENSE</file>
-        <file>web/dist/js/mathjax/.DS_Store</file>
         <file>web/dist/js/mathjax/sre/sre-node.js</file>
         <file>web/dist/js/mathjax/sre/sre_browser.js</file>
         <file>web/dist/js/mathjax/sre/mathmaps/en.js</file>
@@ -669,7 +664,6 @@
         <file>web/dist/js/plantuml/plantuml-encoder.min.js</file>
         <file>web/dist/images/logo.png</file>
         <file>web/dist/images/img-loading.svg</file>
-        <file>web/dist/images/.DS_Store</file>
         <file>web/dist/images/emoji/b3log.png</file>
         <file>web/dist/images/emoji/sym.png</file>
         <file>web/dist/images/emoji/hacpai.png</file>
@@ -743,22 +737,17 @@
         <file>web/dist/ts/export/index.d.ts</file>
         <file>web/dist/ts/toolbar/EditMode.d.ts</file>
         <file>web/dist/ts/toolbar/InsertAfter.d.ts</file>
-        <file>web/dist/ts/toolbar/Upload.d.ts</file>
         <file>web/dist/ts/toolbar/Redo.d.ts</file>
         <file>web/dist/ts/toolbar/Indent.d.ts</file>
         <file>web/dist/ts/toolbar/CodeTheme.d.ts</file>
         <file>web/dist/ts/toolbar/Custom.d.ts</file>
         <file>web/dist/ts/toolbar/index.d.ts</file>
         <file>web/dist/ts/toolbar/Both.d.ts</file>
-        <file>web/dist/ts/toolbar/Info.d.ts</file>
         <file>web/dist/ts/toolbar/Br.d.ts</file>
         <file>web/dist/ts/toolbar/Outdent.d.ts</file>
-        <file>web/dist/ts/toolbar/Record.d.ts</file>
         <file>web/dist/ts/toolbar/ContentTheme.d.ts</file>
         <file>web/dist/ts/toolbar/Emoji.d.ts</file>
         <file>web/dist/ts/toolbar/Export.d.ts</file>
-        <file>web/dist/ts/toolbar/Devtools.d.ts</file>
-        <file>web/dist/ts/toolbar/Preview.d.ts</file>
         <file>web/dist/ts/toolbar/Headings.d.ts</file>
         <file>web/dist/ts/toolbar/setToolbar.d.ts</file>
         <file>web/dist/ts/toolbar/InsertBefore.d.ts</file>
@@ -766,9 +755,7 @@
         <file>web/dist/ts/toolbar/MenuItem.d.ts</file>
         <file>web/dist/ts/toolbar/Counter.d.ts</file>
         <file>web/dist/ts/toolbar/Undo.d.ts</file>
-        <file>web/dist/ts/toolbar/Help.d.ts</file>
         <file>web/dist/ts/toolbar/Outline.d.ts</file>
-        <file>web/dist/ts/toolbar/Fullscreen.d.ts</file>
         <file>web/dist/ts/preview/image.d.ts</file>
         <file>web/dist/ts/preview/index.d.ts</file>
         <file>web/dist/ts/ui/setTheme.d.ts</file>
@@ -790,9 +777,8 @@
         <file>web/dist/ts/resize/index.d.ts</file>
         <file>web/dist/ts/tip/index.d.ts</file>
         <file>web/dist/css/content-theme/dark.css</file>
-        <file>web/dist/css/content-theme/wechat.css</file>
         <file>web/dist/css/content-theme/light.css</file>
-        <file>web/dist/css/content-theme/ant-design.css</file>
         <file>web/dist/types/index.d.ts</file>
     </qresource>
 </RCC>
+    

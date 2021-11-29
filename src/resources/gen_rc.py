@@ -10,11 +10,10 @@ for fpathe,dirs,fs in os.walk('.'):
 
 qrc_content_start = \
     '''<RCC>
-        <qresource prefix="/">
-    '''
+    <qresource prefix="/">'''
 qrc_content_end = \
     '''    </qresource>
-    </RCC>
+</RCC>
     '''
 
 qrc_content = qrc_content_start

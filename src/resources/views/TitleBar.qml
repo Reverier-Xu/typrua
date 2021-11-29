@@ -6,7 +6,7 @@ import "../components"
 
 Rectangle {
     id: root
-    color: display.colorStyle ? "white" : "black"
+    color: display.colorStyle ? "white" : "#24292e"
     Behavior on opacity {
         NumberAnimation {
             duration: 100

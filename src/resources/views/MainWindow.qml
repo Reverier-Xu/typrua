@@ -24,7 +24,7 @@ FluentWindow {
         anchors.margins: window.visibility === Window.Windowed ? 10 : 0
         border.width: window.visibility === Window.Windowed ? 1 : 0
         border.color: "#40606060"
-        color: display.colorStyle? "#e0e0e0" : "#151515"
+        color: display.colorStyle ? "white" : "#24292e"
 
         Behavior on color {
             ColorAnimation {
@@ -42,10 +42,19 @@ FluentWindow {
             anchors.bottomMargin: window.visibility === Window.Windowed ? 1 : 0
         }
 
+        Rectangle  {
+            id: line
+            anchors.left: sideBar.right
+            anchors.top: sideBar.top
+            anchors.bottom: sideBar.bottom
+            width: display.sideBarExpanded ? 1 : 0
+            color: display.colorStyle ? "#40606060" : "#80000000"
+        }
+
         TitleBar {
             id: titleBar
             anchors.top: parent.top
-            anchors.left: sideBar.right
+            anchors.left: line.right
             anchors.right: parent.right
             anchors.topMargin: window.visibility === Window.Windowed ? 1 : 0
             anchors.rightMargin: window.visibility === Window.Windowed ? 1 : 0
@@ -54,7 +63,7 @@ FluentWindow {
         Editor {
             id: editor
             anchors.top: titleBar.bottom
-            anchors.left: sideBar.right
+            anchors.left: line.right
             anchors.right: parent.right
             anchors.bottom: parent.bottom
             anchors.rightMargin: window.visibility === Window.Windowed ? 1 : 0

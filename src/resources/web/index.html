@@ -4,15 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <title>TypRua</title>
-    <link rel="stylesheet" href="./typrua.css" />
+    <link rel="stylesheet" href="dist/index.css" />
     <style type="text/css">
-        html , body {
+        html,
+        body {
             height: 100%;
         }
+
         body {
             margin: 0;
             padding: 0;
         }
+
         .vditor {
             position: absolute;
             top: 0;
@@ -20,7 +23,26 @@
             right: 0;
             bottom: 0;
         }
-        </style>
+
+        ::-webkit-scrollbar {
+            width: 6px;
+            /* width of the entire scrollbar */
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+            /* color of the tracking area */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #808080;
+            /* color of the scroll thumb */
+            border-radius: 3px;
+            /* roundness of the scroll thumb */
+            border: 0px solid black;
+            /* creates padding around scroll thumb */
+        }
+    </style>
 </head>
 
 <body>
@@ -28,16 +50,17 @@
 </body>
 
 </html>
-<script src="./typrua.js"></script>
+<script src="dist/index.min.js"></script>
 <script>
     const vditor = new Vditor('vditor', {
-        "theme": "light",
+        "theme": "dark",
         "cache": {
             "enable": false
         },
+        "cdn": "qrc:/web/",
         "preview": {
             "theme": {
-                "current": "light"
+                "current": "dark"
             }
         }
     })

@@ -37,7 +37,6 @@ int main(int argc, char *argv[]) {
     QApplication::setOrganizationDomain("woooo.tech");
     QApplication::setWindowIcon(QIcon(":/assets/logo.svg"));
 
-
     auto main_app = AppManager();
     main_app.initialize();
 

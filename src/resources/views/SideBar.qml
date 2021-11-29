@@ -23,9 +23,9 @@ Rectangle {
         anchors.right: parent.right
         anchors.top: parent.top
         showIcon: true
-        contentColor: display.themeColor
-        icon: "qrc:/assets/logo.svg"
-        text: qsTr("TypRua!")
+        contentColor: display.contentColor
+        icon: "qrc:/assets/document.svg"
+        text: qsTr("Files")
         flat: true
         enabled: false
     }

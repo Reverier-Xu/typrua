@@ -33,10 +33,8 @@ export declare abstract class Constants {
     static readonly THEME_OPTIONS: {
         current: string;
         list: {
-            "ant-design": string;
             dark: string;
             light: string;
-            wechat: string;
         };
         path: string;
     };

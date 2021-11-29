@@ -1,0 +1,3 @@
+[submodule "web/vditor"]
+	path = web/vditor
+	url = https://github.com/Vanessa219/vditor

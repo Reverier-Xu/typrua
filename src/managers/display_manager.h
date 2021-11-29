@@ -32,8 +32,8 @@ Q_OBJECT
                        WRITE setSideBarExpanded NOTIFY sideBarExpandedChanged)
 private:
     int activeTabIndex_ = -1;
-    bool colorStyle_ = true;
-    bool sideBarExpanded_ = true;
+    bool colorStyle_ = false;
+    bool sideBarExpanded_ = false;
     QColor themeColor_ = QColor(0x00, 0x78, 0xd6);
     QColor alertColor_ = QColor(0xff, 0x60, 0x33);
 
