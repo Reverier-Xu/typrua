@@ -1,6 +1,6 @@
 import QtQuick 2.9
 import QtQuick.Window 2.9
-import QtQuick.Layouts 1.9
+import QtQuick.Layouts 1.0
 
 Window {
     id: root
