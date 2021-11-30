@@ -27,7 +27,10 @@ int main(int argc, char *argv[]) {
     mallopt(M_ARENA_MAX, 1);
 #endif
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+
+#if QT_VERSION >= QT_VERSION_CHECK(5, 13, 2)
     QtWebEngine::initialize();
+#endif
 
     QApplication app(argc, argv);
 
@@ -36,6 +39,10 @@ int main(int argc, char *argv[]) {
     QApplication::setOrganizationName("Wootec");
     QApplication::setOrganizationDomain("woooo.tech");
     QApplication::setWindowIcon(QIcon(":/assets/logo.svg"));
+
+#if QT_VERSION < QT_VERSION_CHECK(5, 13, 2)
+    QtWebEngine::initialize();
+#endif
 
     auto main_app = AppManager();
     main_app.initialize();

@@ -1,6 +1,6 @@
-import QtQuick 2.15
-import QtQuick.Window 2.15
-import QtGraphicalEffects 1.15
+import QtQuick 2.9
+import QtQuick.Window 2.9
+import QtGraphicalEffects 1.0
 import "qrc:/components"
 
 FluentWindow {
@@ -21,9 +21,6 @@ FluentWindow {
     Rectangle {
         id: centralWidget
         anchors.fill: parent
-        anchors.margins: window.visibility === Window.Windowed ? 10 : 0
-        border.width: window.visibility === Window.Windowed ? 1 : 0
-        border.color: "#40606060"
         color: display.colorStyle ? "white" : "#24292e"
 
         Behavior on color {
@@ -37,9 +34,6 @@ FluentWindow {
             anchors.left: parent.left
             anchors.top: parent.top
             anchors.bottom: parent.bottom
-            anchors.leftMargin: window.visibility === Window.Windowed ? 1 : 0
-            anchors.topMargin: window.visibility === Window.Windowed ? 1 : 0
-            anchors.bottomMargin: window.visibility === Window.Windowed ? 1 : 0
         }
 
         Rectangle  {
@@ -51,23 +45,40 @@ FluentWindow {
             color: display.colorStyle ? "#40606060" : "#80000000"
         }
 
-        TitleBar {
-            id: titleBar
+        Editor {
+            id: editor
             anchors.top: parent.top
             anchors.left: line.right
             anchors.right: parent.right
-            anchors.topMargin: window.visibility === Window.Windowed ? 1 : 0
-            anchors.rightMargin: window.visibility === Window.Windowed ? 1 : 0
-        }
-
-        Editor {
-            id: editor
-            anchors.top: titleBar.bottom
-            anchors.left: line.right
-            anchors.right: parent.right
             anchors.bottom: parent.bottom
-            anchors.rightMargin: window.visibility === Window.Windowed ? 1 : 0
-            anchors.bottomMargin: window.visibility === Window.Windowed ? 1 : 0
+
+            IconButton {
+                id: sideBarButton
+                anchors.left: editor.left
+                anchors.top: editor.top
+                icon: display.sideBarExpanded ? "qrc:/assets/folder-prohibited.svg" : "qrc:/assets/folder-open.svg"
+                height: 35
+                width: 35
+                flat: true
+                border.color: "transparent"
+                onClicked: {
+                    display.sideBarExpanded = !display.sideBarExpanded;
+                }
+            }
+
+            IconButton {
+                id: colorThemeButton
+                anchors.right: editor.right
+                anchors.top: editor.top
+                icon: display.colorStyle ? "qrc:/assets/weather-sunny.svg" : "qrc:/assets/weather-moon.svg"
+                height: 35
+                width: 35
+                flat: true
+                border.color: "transparent"
+                onClicked: {
+                    display.colorStyle = !display.colorStyle;
+                }
+            }
         }
     }
 }
