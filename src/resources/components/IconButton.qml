@@ -27,11 +27,11 @@ PushArea {
         source: iconImage
         rotation: root.rotation
         color: root.contentColor
-        Behavior on color {
-            ColorAnimation {
-                duration: 200
-            }
-        }
+        // Behavior on color {
+        //     ColorAnimation {
+        //         duration: 200
+        //     }
+        // }
         smooth: true
         antialiasing: true
         visible: root.noOverlay?false:true

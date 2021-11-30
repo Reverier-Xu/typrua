@@ -15,6 +15,7 @@
 #include <QQmlContext>
 
 #include "display_manager.h"
+#include "editor_manager.h"
 
 GuiManager* GuiManager::instance_ = nullptr;
 
@@ -44,4 +45,6 @@ void GuiManager::createUi() {
 void GuiManager::exportManagers() {
     uiEngine_->rootContext()->setContextProperty(
         "display", DisplayManager::instance(parent()));
+    uiEngine_->rootContext()->setContextProperty(
+        "editor", EditorManager::instance(parent()));
 }

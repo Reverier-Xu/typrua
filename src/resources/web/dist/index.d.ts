@@ -8,7 +8,7 @@ declare class Vditor extends VditorMethod {
      * @param id 要挂载 Vditor 的元素或者元素 ID。
      * @param options Vditor 参数
      */
-    constructor(id: string | HTMLElement, options?: IOptions);
+    constructor(id: string | HTMLElement, options?: IOptions, cb?: (vditor: IVditor) => void);
     /** 设置主题 */
     setTheme(theme: "dark" | "classic", contentTheme?: string, codeTheme?: string, contentThemePath?: string): void;
     /** 获取 Markdown 内容 */

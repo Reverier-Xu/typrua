@@ -33,11 +33,11 @@ Rectangle {
         anchors.fill: image
         source: image
         color: contentColor
-        Behavior on color {
-            ColorAnimation {
-                duration: 200
-            }
-        }
+        // Behavior on color {
+        //     ColorAnimation {
+        //         duration: 200
+        //     }
+        // }
         smooth: true
         antialiasing: true
         visible: !root.noOverlay && root.showIcon
@@ -50,11 +50,11 @@ Rectangle {
         anchors.leftMargin: root.fontSize * 0.5
         anchors.horizontalCenter: root.showIcon? undefined: parent.horizontalCenter
         color: contentColor
-        Behavior on color {
-            ColorAnimation {
-                duration: 200
-            }
-        }
+        // Behavior on color {
+        //     ColorAnimation {
+        //         duration: 200
+        //     }
+        // }
         font.pixelSize: root.fontSize
     }
 }

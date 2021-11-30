@@ -766,6 +766,7 @@
         <file>web/dist/ts/wysiwyg/toolbarEvent.d.ts</file>
         <file>web/dist/ts/resize/index.d.ts</file>
         <file>web/dist/ts/tip/index.d.ts</file>
+        <file>web/dist/css/abcjs-midi.css</file>
         <file>web/dist/css/content-theme/dark.css</file>
         <file>web/dist/css/content-theme/light.css</file>
         <file>web/dist/types/index.d.ts</file>

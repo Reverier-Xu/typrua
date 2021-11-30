@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>TypRua</title>
     <link rel="stylesheet" href="dist/index.css" />
+    <link rel="stylesheet" href="dist/css/abcjs-midi.css" />
     <style type="text/css">
         html,
         body {
@@ -12,8 +13,10 @@
         }
 
         body {
+            --base-color: white;
             margin: 0;
             padding: 0;
+            background-color: var(--base-color);
         }
 
         .vditor {
@@ -53,16 +56,128 @@
 <script src="dist/index.min.js"></script>
 <script type="text/javascript" src="qrc:///qtwebchannel/qwebchannel.js"></script>
 <script>
-    const vditor = new Vditor('vditor', {
-        "theme": "light",
-        "cache": {
-            "enable": false
-        },
-        "cdn": "qrc:/web/",
-        "preview": {
-            "theme": {
-                "current": "light"
+    const initVditor = (language) => {
+        window.vditor = new Vditor('vditor', {
+            _lutePath: 'dist/js/lute/lute.min.js',
+            cdn: 'qrc:/web',
+            lang: language,
+            height: '100%',
+            // toolbar,
+            toolbar: [
+                'undo',
+                'redo',
+                '|',
+                'headings',
+                'bold',
+                'italic',
+                'strike',
+                'link',
+                '|',
+                'list',
+                'ordered-list',
+                'check',
+                'outdent',
+                'indent',
+                '|',
+                'quote',
+                'line',
+                'code',
+                'table',
+                'inline-code',
+                'insert-before',
+                'insert-after',
+                '|',
+                'edit-mode',
+                'export'
+            ],
+            mode: 'wysiwyg',
+            outline: {
+                enable: true,
+                position: 'left',
+            },
+            debugger: false,
+            typewriterMode: false,
+            placeholder: 'Hello, TypRua!',
+            preview: {
+                markdown: {
+                    toc: true,
+                    mark: true,
+                    footnotes: true,
+                    autoSpace: true,
+                },
+                math: {
+                    engine: 'KaTeX',
+                },
+            },
+            toolbarConfig: {
+                pin: true,
+            },
+            hint: {
+                parse: false,
+                extend: [
+                    // {
+                    //     key: '#',
+                    //     hint: (key) => {
+                    //         console.log(key)
+                    //         if ('vditor'.indexOf(key.toLocaleLowerCase()) > -1) {
+                    //             return [
+                    //                 {
+                    //                     value: '#typrua',
+                    //                     html: '<span style="color: #999;">#TypRua</span> let\'s Rua!',
+                    //                 }]
+                    //         }
+                    //         return []
+                    //     },
+                    // }
+                ],
+            },
+            tab: '\t',
+            // upload: {
+            //     accept: 'image/*',
+            //     token: 'test',
+            //     url: '/api/upload/editor',
+            //     linkToImgUrl: '/api/upload/fetch',
+            //     filename(name) {
+            //         return name.replace(/[^(a-zA-Z0-9\u4e00-\u9fa5\.)]/g, '').
+            //             replace(/[\?\\/:|<>\*\[\]\(\)\$%\{\}@~]/g, '').
+            //             replace('/\\s/g', '')
+            //     },
+            // },
+        }, function (vditor) {
+            if (window.displayManager) {
+                if (window.displayManager.colorStyle) {
+                    vditor.setTheme("classic", "light");
+                    document.body.style.setProperty("--base-color", "white");
+                } else {
+                    vditor.setTheme("dark", "dark");
+                    document.body.style.setProperty("--base-color", "#24292e");
+                }
+            } else {
+                vditor.setTheme("classic", "light");
             }
-        }
-    })
+        })
+    }
+
+    window.setLang = (language) => {
+        vditor.destroy();
+        initVditor(language);
+    }
+    // initVditor('zh_CN');
+
+    // window.onload = function() {
+    new QWebChannel(qt.webChannelTransport, function (channel) {
+        window.displayManager = channel.objects.displayManager;
+        initVditor(displayManager.language);
+        displayManager.colorStyleChanged.connect(function (color) {
+            if (color) {
+                vditor.setTheme("classic", "light");
+                document.body.style.setProperty("--base-color", "white");
+            } else {
+                vditor.setTheme("dark", "dark");
+                document.body.style.setProperty("--base-color", "#24292e");
+            }
+        });
+    });
+    // }
+
 </script>

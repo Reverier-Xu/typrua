@@ -14,8 +14,8 @@ ScrollBar {
         implicitHeight: 100
         radius: width / 2
         color: scroll.pressed? "#808080" : (scroll.active? "#80808080":"transparent")
-        Behavior on color {
-            ColorAnimation { duration: 200 }
-        }
+        // Behavior on color {
+        //     ColorAnimation { duration: 200 }
+        // }
     }
 }

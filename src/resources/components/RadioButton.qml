@@ -24,11 +24,11 @@ PushArea {
         color: "transparent"
         border.width: 2
         border.color: root.chose ? display.themeColor : "#80808080"
-        Behavior on color {
-            ColorAnimation {
-                duration: 200
-            }
-        }
+        // Behavior on color {
+        //     ColorAnimation {
+        //         duration: 200
+        //     }
+        // }
         Rectangle {
             id: pointRect
             width: root.iconSize - 8
@@ -36,11 +36,11 @@ PushArea {
             radius: width / 2
             anchors.centerIn: roundRect
             color: root.chose ? display.themeColor : "transparent"
-            Behavior on color {
-                ColorAnimation {
-                    duration: 200
-                }
-            }
+            // Behavior on color {
+            //     ColorAnimation {
+            //         duration: 200
+            //     }
+            // }
         }
     }
 
@@ -62,11 +62,11 @@ PushArea {
         anchors.fill: image
         source: image
         color: contentColor
-        Behavior on color {
-            ColorAnimation {
-                duration: 200
-            }
-        }
+        // Behavior on color {
+        //     ColorAnimation {
+        //         duration: 200
+        //     }
+        // }
         smooth: true
         antialiasing: true
         visible: root.noOverlay?false:true
@@ -79,11 +79,11 @@ PushArea {
         anchors.leftMargin: root.fontSize * 0.5
         anchors.horizontalCenter: root.showIcon? undefined: parent.horizontalCenter
         color: contentColor
-        Behavior on color {
-            ColorAnimation {
-                duration: 200
-            }
-        }
+        // Behavior on color {
+        //     ColorAnimation {
+        //         duration: 200
+        //     }
+        // }
         font.pixelSize: root.fontSize
         font.bold: root.bold
     }

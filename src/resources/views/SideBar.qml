@@ -30,6 +30,16 @@ Rectangle {
         enabled: false
     }
 
+    IconButton {
+        id: openFileIconButton
+        anchors.right: titleButton.right
+        anchors.top: titleButton.top
+        anchors.bottom: titleButton.bottom
+        icon: "qrc:/assets/open.svg"
+        flat: true
+        width: height
+    }
+
     SearchBox {
         id: globalSearchBox
         height: 28
@@ -37,7 +47,40 @@ Rectangle {
         anchors.right: parent.right
         anchors.top: titleButton.bottom
         anchors.margins: 12
-        placeholder: qsTr("Search here...")
+        placeholder: qsTr("Filter...")
+    }
+
+    Text {
+        id: nothingFoundText
+        anchors.top: globalSearchBox.bottom
+        anchors.topMargin: 36
+        anchors.horizontalCenter: parent.horizontalCenter
+        text: qsTr("Nothing here.")
+        font.pixelSize: 16
+        font.bold: true
+        color: "#808080"
+    }
+
+    PushButton {
+        id: openFileButton
+        height: 32
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: nothingFoundText.bottom
+        anchors.topMargin: 24
+        width: parent.width - 24
+        showIcon: false
+        text: qsTr("Open File")
+    }
+
+    PushButton {
+        id: openFolderButton
+        height: 32
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: openFileButton.bottom
+        anchors.topMargin: 12
+        width: parent.width - 24
+        showIcon: false
+        text: qsTr("Open Folder")
     }
 
     ListView {

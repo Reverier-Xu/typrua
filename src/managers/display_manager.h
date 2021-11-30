@@ -30,12 +30,14 @@ Q_OBJECT
                        setAlertColor NOTIFY alertColorChanged)
     Q_PROPERTY(bool sideBarExpanded READ sideBarExpanded
                        WRITE setSideBarExpanded NOTIFY sideBarExpandedChanged)
+    Q_PROPERTY(QString language READ language WRITE setLanguage NOTIFY languageChanged)
 private:
     int activeTabIndex_ = -1;
     bool colorStyle_ = false;
     bool sideBarExpanded_ = false;
     QColor themeColor_ = QColor(0x00, 0x78, 0xd6);
     QColor alertColor_ = QColor(0xff, 0x60, 0x33);
+    QString language_ = "en_US";
 
 protected:
     explicit DisplayManager(QObject *parent);
@@ -79,6 +81,10 @@ public:
 
     void setContentColor(const QColor &value);
 
+    [[nodiscard]] QString language() const;
+
+    void setLanguage(const QString &value);
+
 signals:
 
     void activeTabIndexChanged(int n);
@@ -92,5 +98,7 @@ signals:
     void alertColorChanged(QColor n);
 
     void contentColorChanged(QColor n);
+
+    void languageChanged(QString n);
 
 };

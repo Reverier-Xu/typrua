@@ -1,6 +1,7 @@
 import QtQuick 2.9
 import QtQuick.Window 2.9
 import QtGraphicalEffects 1.0
+import Qt.labs.platform 1.1
 import "qrc:/components"
 
 FluentWindow {
@@ -10,6 +11,14 @@ FluentWindow {
     height: 700
     minimumHeight: 700
 
+    FileDialog {
+        id: saveFileDialog
+        fileMode: FileDialog.SaveFile
+        currentFile: editor.currentFilePath
+        folder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
+        nameFilters: ["Markdown files (*.md)"]
+    }
+
     KeyTapEvent {
         id: exitAppEvent
         customKey: qsTr("Ctrl+Q")
@@ -18,16 +27,23 @@ FluentWindow {
         }
     }
 
+    KeyTapEvent {
+        id: saveEvent
+        customKey: qsTr("Ctrl+S")
+        onClicked: {
+        }
+    }
+
     Rectangle {
         id: centralWidget
         anchors.fill: parent
         color: display.colorStyle ? "white" : "#24292e"
 
-        Behavior on color {
-            ColorAnimation {
-                duration: 280
-            }
-        }
+        // Behavior on color {
+        //     ColorAnimation {
+        //         duration: 280
+        //     }
+        // }
 
         SideBar {
             id: sideBar
@@ -46,7 +62,7 @@ FluentWindow {
         }
 
         Editor {
-            id: editor
+            id: mainEditor
             anchors.top: parent.top
             anchors.left: line.right
             anchors.right: parent.right
@@ -54,8 +70,8 @@ FluentWindow {
 
             IconButton {
                 id: sideBarButton
-                anchors.left: editor.left
-                anchors.top: editor.top
+                anchors.left: mainEditor.left
+                anchors.top: mainEditor.top
                 icon: display.sideBarExpanded ? "qrc:/assets/folder-prohibited.svg" : "qrc:/assets/folder-open.svg"
                 height: 35
                 width: 35
@@ -68,8 +84,8 @@ FluentWindow {
 
             IconButton {
                 id: colorThemeButton
-                anchors.right: editor.right
-                anchors.top: editor.top
+                anchors.right: mainEditor.right
+                anchors.top: mainEditor.top
                 icon: display.colorStyle ? "qrc:/assets/weather-sunny.svg" : "qrc:/assets/weather-moon.svg"
                 height: 35
                 width: 35

@@ -105,3 +105,10 @@ QColor DisplayManager::contentColor() const {
 void DisplayManager::setContentColor(const QColor& value) {
     emit contentColorChanged(contentColor());
 }
+
+QString DisplayManager::language() const { return language_; }
+
+void DisplayManager::setLanguage(const QString& value) {
+    language_ = value;
+    emit languageChanged(value);
+}

@@ -138,11 +138,11 @@ Rectangle {
             wrapMode: TextEdit.Wrap
             textFormat: TextEdit.PlainText
             color: display.contentColor
-            Behavior on color {
-                ColorAnimation {
-                    duration: 200
-                }
-            }
+            // Behavior on color {
+            //     ColorAnimation {
+            //         duration: 200
+            //     }
+            // }
             selectedTextColor: display.contentColor
             selectionColor: "#603399ff"
 
@@ -297,9 +297,9 @@ Rectangle {
             }
         }
     ]
-    Behavior on color {
-        ColorAnimation {
-            duration: 200
-        }
-    }
+    // Behavior on color {
+    //     ColorAnimation {
+    //         duration: 200
+    //     }
+    // }
 }
