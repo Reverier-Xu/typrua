@@ -1,33 +1,24 @@
 <RCC>
     <qresource prefix="/">
         <file>components/Switch.qml</file>
-        <file>components/VerticalStepSlider.qml</file>
         <file>components/TextLabel.qml</file>
-        <file>components/ProgressBar.qml</file>
         <file>components/PushArea.qml</file>
         <file>components/UXScrollBar.qml</file>
-        <file>components/HorizontalStepSlider.qml</file>
         <file>components/ContentMenu.qml</file>
-        <file>components/SliderBar.qml</file>
-        <file>components/MenuButton.qml</file>
         <file>components/PushButton.qml</file>
         <file>components/ActiveTab.qml</file>
         <file>components/Loader.qml</file>
         <file>components/InputArea.qml</file>
-        <file>components/CircleSliderButton.qml</file>
         <file>components/SearchBox.qml</file>
         <file>components/IconButton.qml</file>
         <file>components/KeyTapEvent.qml</file>
         <file>components/RadioButton.qml</file>
         <file>components/ShortcutEvent.qml</file>
-        <file>components/CircleSliderArea.qml</file>
-        <file>components/TimeButton.qml</file>
         <file>components/InputBox.qml</file>
         <file>components/FluentWindow.qml</file>
         <file>views/Editor.qml</file>
         <file>views/MainWindow.qml</file>
         <file>views/SideBar.qml</file>
-        <file>views/TitleBar.qml</file>
         <file>assets/arrow-step-out.svg</file>
         <file>assets/music-note-2.svg</file>
         <file>assets/balloon.svg</file>

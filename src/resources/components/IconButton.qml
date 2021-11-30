@@ -1,5 +1,5 @@
-import QtQuick 2.15
-import QtGraphicalEffects 1.15
+import QtQuick 2.9
+import QtGraphicalEffects 1.9
 
 PushArea {
     id: root
