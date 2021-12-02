@@ -1,7 +1,7 @@
 import QtQuick 2.9
 import QtQuick.Window 2.9
 import QtGraphicalEffects 1.0
-import Qt.labs.platform 1.1
+import Qt.labs.platform 1.0
 import "qrc:/components"
 
 FluentWindow {
