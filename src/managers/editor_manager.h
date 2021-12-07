@@ -17,6 +17,8 @@ class EditorManager : public QObject {
     Q_OBJECT
     Q_PROPERTY(QString currentFile READ currentFile WRITE setCurrentFile NOTIFY
                    currentFileChanged)
+    Q_PROPERTY(QString exportedFile READ exportedFile WRITE setExportedFile NOTIFY
+                   exportedFileChanged)
     Q_PROPERTY(QString currentFilePath READ currentFilePath WRITE
                    setCurrentFilePath NOTIFY currentFilePathChanged)
     Q_PROPERTY(
@@ -26,6 +28,7 @@ class EditorManager : public QObject {
 
    private:
     QString currentFile_;
+    QString exportedFile_;
     QString currentFilePath_;
     QString content_;
     bool isOpened_;
@@ -40,6 +43,9 @@ class EditorManager : public QObject {
 
     [[nodiscard]] QString currentFile() const;
     void setCurrentFile(const QString &currentFile);
+
+    [[nodiscard]] QString exportedFile() const;
+    void setExportedFile(const QString &exportedFile);
 
     [[nodiscard]] QString currentFilePath() const;
     void setCurrentFilePath(const QString &currentFilePath);
@@ -59,8 +65,15 @@ class EditorManager : public QObject {
 
     Q_INVOKABLE void open(const QString &filePath);
 
+    Q_INVOKABLE void close();
+
+    Q_INVOKABLE void exportAs(const QString &filePath);
+
+    Q_INVOKABLE QString getLocalFilePath(const QString &urlFilePath);
+
    signals:
     void currentFileChanged(const QString &currentFile);
+    void exportedFileChanged(const QString &exportedFile);
     void currentFilePathChanged(const QString &currentFilePath);
     void contentChanged(const QString &content);
     void isOpenedChanged(bool opened);

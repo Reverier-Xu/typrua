@@ -11,14 +11,6 @@ FluentWindow {
     height: 700
     minimumHeight: 700
 
-    FileDialog {
-        id: saveFileDialog
-        fileMode: FileDialog.SaveFile
-        currentFile: editor.currentFilePath
-        folder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
-        nameFilters: ["Markdown files (*.md)"]
-    }
-
     KeyTapEvent {
         id: exitAppEvent
         customKey: qsTr("Ctrl+Q")

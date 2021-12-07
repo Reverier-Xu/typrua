@@ -16,6 +16,9 @@
 #include <QFileInfo>
 #include <QFile>
 #include <QTextStream>
+#include <QUrl>
+
+#include <QDebug>
 
 EditorManager* EditorManager::instance_ = nullptr;
 
@@ -41,6 +44,15 @@ void EditorManager::setCurrentFile(const QString& currentFile) {
     if (currentFile_ != currentFile) {
         currentFile_ = currentFile;
         emit currentFileChanged(currentFile_);
+    }
+}
+
+QString EditorManager::exportedFile() const { return exportedFile_; }
+
+void EditorManager::setExportedFile(const QString& exportedFile) {
+    if (exportedFile_ != exportedFile) {
+        exportedFile_ = exportedFile;
+        emit exportedFileChanged(exportedFile_);
     }
 }
 
@@ -100,4 +112,24 @@ void EditorManager::open(const QString& filePath) {
         externalSetContent(in.readAll());
         file.close();
     }
+}
+
+void EditorManager::close() {
+    setCurrentFilePath("");
+    setCurrentFile("");
+    externalSetContent("");
+}
+
+void EditorManager::exportAs(const QString& filePath) {
+    qDebug() << exportedFile() << " exportAs " << filePath;
+    QFile::copy(exportedFile(), filePath);
+}
+
+QString EditorManager::getLocalFilePath(const QString &urlFilePath) {
+    QUrl url(urlFilePath);
+    QString localFilePath = url.toLocalFile();
+    if (localFilePath.isEmpty()) {
+        localFilePath = urlFilePath;
+    }
+    return localFilePath;
 }
