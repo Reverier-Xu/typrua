@@ -16,14 +16,11 @@
         <file>components/ShortcutEvent.qml</file>
         <file>components/InputBox.qml</file>
         <file>components/FluentWindow.qml</file>
-        <file>views/MessageDialog.qml</file>
         <file>views/EditorPage.qml</file>
-        <file>views/OptionDialog.qml</file>
         <file>views/PreviewPage.qml</file>
         <file>views/MainWindow.qml</file>
         <file>views/SettingsDialog.qml</file>
         <file>views/SideBar.qml</file>
-        <file>views/FileDialog.qml</file>
         <file>assets/arrow-step-out.svg</file>
         <file>assets/music-note-2.svg</file>
         <file>assets/balloon.svg</file>

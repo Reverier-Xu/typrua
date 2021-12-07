@@ -63,7 +63,11 @@ class EditorManager : public QObject {
 
     Q_INVOKABLE void saveAs(const QString &filePath);
 
+    Q_INVOKABLE void requestOpen();
+
     Q_INVOKABLE void open(const QString &filePath);
+
+    Q_INVOKABLE void openFolder(const QString &folderPath);
 
     Q_INVOKABLE void close();
 
@@ -73,12 +77,15 @@ class EditorManager : public QObject {
 
     Q_INVOKABLE void handleDrop(const QString &path);
 
+    Q_INVOKABLE void requirePaste();
+
    signals:
     void currentFileChanged(const QString &currentFile);
     void exportedFileChanged(const QString &exportedFile);
     void currentFilePathChanged(const QString &currentFilePath);
     void contentChanged(const QString &content);
     void isOpenedChanged(bool opened);
-    void imageInsertRequested(const QString &image);
+    void pasteRequested(const QString &content);
     void savePathRequested();
+    void openFilePathRequested();
 };

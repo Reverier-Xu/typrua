@@ -37,7 +37,7 @@ private:
     int activeTabIndex_ = -1;
     bool colorStyle_ = false;
     bool sideBarExpanded_ = false;
-    bool outlineExpanded_ = true;
+    bool outlineExpanded_ = false;
     QColor themeColor_ = QColor(0x00, 0x78, 0xd6);
     QColor alertColor_ = QColor(0xff, 0x60, 0x33);
     QString language_ = "en_US";

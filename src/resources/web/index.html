@@ -64,6 +64,30 @@
             height: '100%',
             // toolbar,
             toolbar: [
+                {
+                    hotkey: '',
+                    name: '',
+                    tipPosition: 'n',
+                    tip: '',
+                    className: 'right',
+                    icon: '',
+                },
+                {
+                    hotkey: '',
+                    name: '',
+                    tipPosition: 'n',
+                    tip: '',
+                    className: 'right',
+                    icon: '',
+                },
+                {
+                    hotkey: '',
+                    name: '',
+                    tipPosition: 'n',
+                    tip: '',
+                    className: 'right',
+                    icon: '',
+                },
                 'undo',
                 'redo',
                 '|',
@@ -148,17 +172,17 @@
         }, function (vditor) {
             if (window.displayManager) {
                 if (window.displayManager.colorStyle) {
-                    vditor.setTheme("classic", "light");
+                    vditor.setTheme("classic", "light", "github");
                     document.body.style.setProperty("--base-color", "white");
                 } else {
-                    vditor.setTheme("dark", "dark");
+                    vditor.setTheme("dark", "dark", "dracula");
                     document.body.style.setProperty("--base-color", "#24292e");
                 }
             } else {
-                vditor.setTheme("classic", "light");
+                vditor.setTheme("classic", "light", "github");
             }
 
-            window.setInterval(()=>{
+            window.setInterval(() => {
                 editorManager.content = vditor.getValue();
             }, 1000);
             vditor.vditor.outline.toggle(vditor.vditor, displayManager.outlineExpanded);
@@ -171,10 +195,10 @@
         initVditor(displayManager.language);
         displayManager.colorStyleChanged.connect(function (color) {
             if (color) {
-                vditor.setTheme("classic", "light");
+                vditor.setTheme("classic", "light", "github");
                 document.body.style.setProperty("--base-color", "white");
             } else {
-                vditor.setTheme("dark", "dark");
+                vditor.setTheme("dark", "dark", "dracula");
                 document.body.style.setProperty("--base-color", "#24292e");
             }
         });
@@ -184,7 +208,7 @@
         editorManager.contentChanged.connect(function (content) {
             vditor.setValue(content);
         });
-        editorManager.imageInsertRequested.connect(function (imageMd) {
+        editorManager.pasteRequested.connect(function (imageMd) {
             vditor.insertValue(imageMd);
         });
     });

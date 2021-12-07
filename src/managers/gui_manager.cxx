@@ -16,6 +16,7 @@
 
 #include "display_manager.h"
 #include "editor_manager.h"
+#include "folder_manager.h"
 
 GuiManager* GuiManager::instance_ = nullptr;
 
@@ -47,4 +48,6 @@ void GuiManager::exportManagers() {
         "display", DisplayManager::instance(parent()));
     uiEngine_->rootContext()->setContextProperty(
         "editor", EditorManager::instance(parent()));
+    uiEngine_->rootContext()->setContextProperty(
+        "folder", FolderManager::instance(parent()));
 }

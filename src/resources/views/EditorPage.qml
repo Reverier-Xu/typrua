@@ -16,37 +16,6 @@ Rectangle {
     //     }
     // }
 
-    FileDialog {
-        id: exportFileDialog
-        fileMode: FileDialog.SaveFile
-        folder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
-        nameFilters: ["PDF (*.pdf)"]
-
-        onAccepted: {
-            // console.log(editor.getLocalFilePath(exportFileDialog.file.toString()));
-            editor.exportAs(editor.getLocalFilePath(exportFileDialog.file.toString()));
-        }
-    }
-
-    FileDialog {
-        id: saveFileDialog
-        fileMode: FileDialog.SaveFile
-        folder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
-        nameFilters: ["Markdown (*.md)"]
-
-        onAccepted: {
-            // console.log(editor.getLocalFilePath(exportFileDialog.file.toString()));
-            editor.saveAs(editor.getLocalFilePath(saveFileDialog.file.toString()));
-        }
-
-        Connections {
-            target: editor
-            function onSavePathRequested() {
-                saveFileDialog.open();
-            }
-        }
-    }
-
     Rectangle {
         id: loadProgressRect
         anchors.top: parent.top
@@ -88,6 +57,7 @@ Rectangle {
         id: webView
         anchors.fill: parent
         url: "qrc:/web/index.html"
+        settings.javascriptCanAccessClipboard: true
 
         webChannel: WebChannel {
             id: webChannel
@@ -101,24 +71,6 @@ Rectangle {
             // profile.downloadRequested.connect(webView.onDownloadRequested)
             // profile.downloadFinished.connect(webView.onDownloadFinished)
         }
-
-        // function onDownloadRequested(download) {
-        //     let suffix = download.path.split(".").pop();
-        //     // console.log("Download request: " + download.path);
-        //     download.path = editor.getLocalFilePath(StandardPaths.writableLocation(StandardPaths.DownloadLocation) + "/export." + suffix);
-        //     editor.exportedFile = download.path;
-        //     root.downloads = download;
-        //     reloadTimer.start();
-        //     // console.log("Download requested: " + download.path);
-        //     download.accept();
-        // }
-
-        // function onDownloadFinished(download) {
-        //     // console.log("Download finished: " + download.path);
-        //     reloadTimer.stop();
-        //     fileProgressRect.progress = 100;
-        //     exportFileDialog.open();
-        // }
     }
         
     DropArea {

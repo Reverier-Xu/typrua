@@ -74,6 +74,9 @@ Rectangle {
         width: parent.width - 24
         showIcon: false
         text: qsTr("Open File")
+        onClicked: {
+            editor.requestOpen();
+        }
     }
 
     PushButton {

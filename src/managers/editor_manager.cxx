@@ -11,15 +11,22 @@
 
 #include "editor_manager.h"
 
+#include <QApplication>
+#include <QClipboard>
 #include <QDebug>
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
+#include <QMimeData>
 #include <QMimeDatabase>
 #include <QMimeType>
 #include <QMutex>
+#include <QStandardPaths>
 #include <QTextStream>
 #include <QUrl>
+#include <QUuid>
+
+#include "folder_manager.h"
 
 EditorManager* EditorManager::instance_ = nullptr;
 
@@ -71,8 +78,7 @@ QString EditorManager::content() const { return content_; }
 void EditorManager::setContent(const QString& content) {
     if (content_ != content) {
         content_ = content;
-        if (!currentFile_.isEmpty())
-        save();
+        if (!currentFile_.isEmpty()) save();
     }
 }
 
@@ -121,6 +127,10 @@ void EditorManager::open(const QString& filePath) {
     }
 }
 
+void EditorManager::openFolder(const QString& folderPath) {
+    setCurrentFilePath(folderPath);
+}
+
 void EditorManager::close() {
     setCurrentFilePath("");
     setCurrentFile("");
@@ -145,14 +155,45 @@ void EditorManager::handleDrop(const QString& path) {
     // qDebug() << path;
     QMimeDatabase db;
     QMimeType mime = db.mimeTypeForFile(path);
-    qDebug() << mime.name();
+    // qDebug() << mime.name();
     if (mime.name().startsWith("image/")) {
         auto insertedMd = "![image](" + path + ")\n";
-        emit imageInsertRequested(insertedMd);
+        emit pasteRequested(insertedMd);
     } else if (mime.name().startsWith("text/")) {
         // qDebug() << "Opening markdown file: " << path;
         open(path);
     } else {
         return;
     }
+}
+
+void EditorManager::requirePaste() {
+    const QClipboard* clipboard = QApplication::clipboard();
+    const QMimeData* mimeData = clipboard->mimeData();
+
+    qDebug() << "requirePaste";
+
+    if (mimeData->hasImage()) {
+        QString cachePath = currentFilePath();
+        if (cachePath.isEmpty()) {
+            cachePath =
+                QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
+        }
+        QString imagePath = cachePath + "/" + QUuid::createUuid().toString() +
+                            ".png";
+        QFile file(imagePath);
+        if (file.open(QIODevice::WriteOnly)) {
+            file.write(mimeData->imageData().toByteArray());
+            file.close();
+            auto insertedMd = "![image](" + imagePath + ")\n";
+            emit pasteRequested(insertedMd);
+        }
+    } else if (mimeData->hasText()) {
+        QString text = mimeData->text();
+        emit pasteRequested(text);
+    }
+}
+
+void EditorManager::requestOpen() {
+    emit openFilePathRequested();
 }

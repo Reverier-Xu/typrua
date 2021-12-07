@@ -6,7 +6,7 @@ import "qrc:/components"
 
 FluentWindow {
     id: window
-    width: 1200
+    width: 1260
     minimumWidth: 1260
     height: 700
     minimumHeight: 700
@@ -25,6 +25,57 @@ FluentWindow {
         onClicked: {
             editor.save();
         }
+    }
+
+    FileDialog {
+        id: saveFileDialog
+        fileMode: FileDialog.SaveFile
+        folder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
+        nameFilters: ["Markdown (*.md)"]
+
+        onAccepted: {
+            // console.log(editor.getLocalFilePath(exportFileDialog.file.toString()));
+            editor.saveAs(editor.getLocalFilePath(saveFileDialog.file.toString()));
+        }
+
+        Connections {
+            target: editor
+            function onSavePathRequested() {
+                saveFileDialog.open();
+            }
+        }
+    }
+
+    FileDialog {
+        id: exportFileDialog
+        fileMode: FileDialog.SaveFile
+        folder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
+        nameFilters: ["PDF (*.pdf)"]
+
+        onAccepted: {
+            // console.log(editor.getLocalFilePath(exportFileDialog.file.toString()));
+            editor.exportAs(editor.getLocalFilePath(exportFileDialog.file.toString()));
+        }
+    }
+
+    FileDialog {
+        id: openFileDialog
+        fileMode: FileDialog.OpenFile
+        folder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
+        nameFilters: ["Markdown (*.md)"]
+
+        onAccepted: {
+            // console.log(editor.getLocalFilePath(openFileDialog.file.toString()));
+            editor.open(editor.getLocalFilePath(openFileDialog.file.toString()));
+        }
+
+        Connections {
+            target: editor
+            function onOpenFilePathRequested() {
+                openFileDialog.open();
+            }
+        }
+
     }
 
     Rectangle {
