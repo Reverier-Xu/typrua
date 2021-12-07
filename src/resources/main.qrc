@@ -16,9 +16,14 @@
         <file>components/ShortcutEvent.qml</file>
         <file>components/InputBox.qml</file>
         <file>components/FluentWindow.qml</file>
-        <file>views/Editor.qml</file>
+        <file>views/MessageDialog.qml</file>
+        <file>views/EditorPage.qml</file>
+        <file>views/OptionDialog.qml</file>
+        <file>views/PreviewPage.qml</file>
         <file>views/MainWindow.qml</file>
+        <file>views/SettingsDialog.qml</file>
         <file>views/SideBar.qml</file>
+        <file>views/FileDialog.qml</file>
         <file>assets/arrow-step-out.svg</file>
         <file>assets/music-note-2.svg</file>
         <file>assets/balloon.svg</file>
@@ -485,6 +490,7 @@
         <file>assets/chevron-left.svg</file>
         <file>assets/star-off.svg</file>
         <file>web/index.html</file>
+        <file>web/preview.html</file>
         <file>web/dist/index.min.js</file>
         <file>web/dist/index.d.ts</file>
         <file>web/dist/index.css</file>

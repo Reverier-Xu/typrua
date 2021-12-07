@@ -31,13 +31,17 @@ Rectangle {
     }
 
     IconButton {
-        id: openFileIconButton
+        id: colorThemeButton
         anchors.right: titleButton.right
         anchors.top: titleButton.top
-        anchors.bottom: titleButton.bottom
-        icon: "qrc:/assets/open.svg"
+        icon: display.colorStyle ? "qrc:/assets/weather-sunny.svg" : "qrc:/assets/weather-moon.svg"
+        height: 32
+        width: 32
         flat: true
-        width: height
+        border.color: "transparent"
+        onClicked: {
+            display.colorStyle = !display.colorStyle;
+        }
     }
 
     SearchBox {

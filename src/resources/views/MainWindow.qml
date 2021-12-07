@@ -7,7 +7,7 @@ import "qrc:/components"
 FluentWindow {
     id: window
     width: 1200
-    minimumWidth: 1200
+    minimumWidth: 1260
     height: 700
     minimumHeight: 700
 
@@ -23,6 +23,7 @@ FluentWindow {
         id: saveEvent
         customKey: qsTr("Ctrl+S")
         onClicked: {
+            editor.save();
         }
     }
 
@@ -30,12 +31,6 @@ FluentWindow {
         id: centralWidget
         anchors.fill: parent
         color: display.colorStyle ? "white" : "#24292e"
-
-        // Behavior on color {
-        //     ColorAnimation {
-        //         duration: 280
-        //     }
-        // }
 
         SideBar {
             id: sideBar
@@ -53,7 +48,7 @@ FluentWindow {
             color: display.colorStyle ? "#40606060" : "#80000000"
         }
 
-        Editor {
+        EditorPage {
             id: mainEditor
             anchors.top: parent.top
             anchors.left: line.right
@@ -65,6 +60,7 @@ FluentWindow {
                 anchors.left: mainEditor.left
                 anchors.top: mainEditor.top
                 icon: display.sideBarExpanded ? "qrc:/assets/folder-prohibited.svg" : "qrc:/assets/folder-open.svg"
+                contentColor: display.sideBarExpanded ? display.themeColor : display.contentColor
                 height: 35
                 width: 35
                 flat: true
@@ -75,18 +71,25 @@ FluentWindow {
             }
 
             IconButton {
-                id: colorThemeButton
-                anchors.right: mainEditor.right
+                id: outlineButton
+                anchors.left: sideBarButton.right
                 anchors.top: mainEditor.top
-                icon: display.colorStyle ? "qrc:/assets/weather-sunny.svg" : "qrc:/assets/weather-moon.svg"
+                icon: "qrc:/assets/timeline.svg"
+                contentColor: display.outlineExpanded ? display.themeColor : display.contentColor
                 height: 35
                 width: 35
                 flat: true
                 border.color: "transparent"
                 onClicked: {
-                    display.colorStyle = !display.colorStyle;
+                    display.outlineExpanded = !display.outlineExpanded;
                 }
             }
+        }
+
+        PreviewPage {
+            id: previewPage
+            anchors.fill: mainEditor
+            visible: false
         }
     }
 }

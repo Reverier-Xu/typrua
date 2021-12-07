@@ -11,14 +11,15 @@
 
 #include "editor_manager.h"
 
-#include <QMutex>
+#include <QDebug>
 #include <QDir>
-#include <QFileInfo>
 #include <QFile>
+#include <QFileInfo>
+#include <QMimeDatabase>
+#include <QMimeType>
+#include <QMutex>
 #include <QTextStream>
 #include <QUrl>
-
-#include <QDebug>
 
 EditorManager* EditorManager::instance_ = nullptr;
 
@@ -70,8 +71,9 @@ QString EditorManager::content() const { return content_; }
 void EditorManager::setContent(const QString& content) {
     if (content_ != content) {
         content_ = content;
+        if (!currentFile_.isEmpty())
+        save();
     }
-    save();
 }
 
 bool EditorManager::isOpened() const { return isOpened_; }
@@ -85,7 +87,8 @@ void EditorManager::setOpened(bool isOpened) {
 void EditorManager::externalSetContent(const QString& content) {
     if (content_ != content) {
         content_ = content;
-        emit contentChanged(content_);
+        qDebug() << "external set content: " << content;
+        emit contentChanged(content);
     }
 }
 
@@ -95,20 +98,24 @@ void EditorManager::save() {
         QTextStream out(&file);
         out << content_;
         file.close();
+    } else {
+        emit savePathRequested();
     }
 }
 
 void EditorManager::saveAs(const QString& filePath) {
     setCurrentFilePath(filePath);
+    setCurrentFile(QFileInfo(filePath).fileName());
     save();
 }
 
 void EditorManager::open(const QString& filePath) {
-    QFile file(filePath);
+    auto realFilePath = getLocalFilePath(filePath);
+    QFile file(realFilePath);
     if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QTextStream in(&file);
-        setCurrentFilePath(filePath);
-        setCurrentFile(QFileInfo(filePath).fileName());
+        setCurrentFilePath(realFilePath);
+        setCurrentFile(QFileInfo(realFilePath).fileName());
         externalSetContent(in.readAll());
         file.close();
     }
@@ -121,15 +128,31 @@ void EditorManager::close() {
 }
 
 void EditorManager::exportAs(const QString& filePath) {
-    qDebug() << exportedFile() << " exportAs " << filePath;
+    // qDebug() << exportedFile() << " exportAs " << filePath;
     QFile::copy(exportedFile(), filePath);
 }
 
-QString EditorManager::getLocalFilePath(const QString &urlFilePath) {
+QString EditorManager::getLocalFilePath(const QString& urlFilePath) {
     QUrl url(urlFilePath);
     QString localFilePath = url.toLocalFile();
     if (localFilePath.isEmpty()) {
         localFilePath = urlFilePath;
     }
     return localFilePath;
+}
+
+void EditorManager::handleDrop(const QString& path) {
+    // qDebug() << path;
+    QMimeDatabase db;
+    QMimeType mime = db.mimeTypeForFile(path);
+    qDebug() << mime.name();
+    if (mime.name().startsWith("image/")) {
+        auto insertedMd = "![image](" + path + ")\n";
+        emit imageInsertRequested(insertedMd);
+    } else if (mime.name().startsWith("text/")) {
+        // qDebug() << "Opening markdown file: " << path;
+        open(path);
+    } else {
+        return;
+    }
 }

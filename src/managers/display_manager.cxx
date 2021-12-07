@@ -74,6 +74,13 @@ void DisplayManager::setSideBarExpanded(bool value) {
     emit sideBarExpandedChanged(value);
 }
 
+bool DisplayManager::outlineExpanded() const { return outlineExpanded_; }
+
+void DisplayManager::setOutlineExpanded(bool value) {
+    outlineExpanded_ = value;
+    emit outlineExpandedChanged(value);
+}
+
 QColor DisplayManager::themeColor() const { return themeColor_; }
 
 void DisplayManager::setThemeColor(const QColor& value) {

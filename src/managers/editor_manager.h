@@ -71,10 +71,14 @@ class EditorManager : public QObject {
 
     Q_INVOKABLE QString getLocalFilePath(const QString &urlFilePath);
 
+    Q_INVOKABLE void handleDrop(const QString &path);
+
    signals:
     void currentFileChanged(const QString &currentFile);
     void exportedFileChanged(const QString &exportedFile);
     void currentFilePathChanged(const QString &currentFilePath);
     void contentChanged(const QString &content);
     void isOpenedChanged(bool opened);
+    void imageInsertRequested(const QString &image);
+    void savePathRequested();
 };

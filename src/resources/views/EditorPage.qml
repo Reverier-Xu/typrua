@@ -20,7 +20,7 @@ Rectangle {
         id: exportFileDialog
         fileMode: FileDialog.SaveFile
         folder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
-        nameFilters: ["Markdown (*.md)", "HTML (*.html)"]
+        nameFilters: ["PDF (*.pdf)"]
 
         onAccepted: {
             // console.log(editor.getLocalFilePath(exportFileDialog.file.toString()));
@@ -36,7 +36,14 @@ Rectangle {
 
         onAccepted: {
             // console.log(editor.getLocalFilePath(exportFileDialog.file.toString()));
-            editor.saveAs(editor.getLocalFilePath(exportFileDialog.file.toString()));
+            editor.saveAs(editor.getLocalFilePath(saveFileDialog.file.toString()));
+        }
+
+        Connections {
+            target: editor
+            function onSavePathRequested() {
+                saveFileDialog.open();
+            }
         }
     }
 
@@ -91,26 +98,40 @@ Rectangle {
         }
 
         Component.onCompleted: {
-            profile.downloadRequested.connect(webView.onDownloadRequested)
-            profile.downloadFinished.connect(webView.onDownloadFinished)
+            // profile.downloadRequested.connect(webView.onDownloadRequested)
+            // profile.downloadFinished.connect(webView.onDownloadFinished)
         }
 
-        function onDownloadRequested(download) {
-            let suffix = download.path.split(".").pop();
-            // console.log("Download request: " + download.path);
-            download.path = editor.getLocalFilePath(StandardPaths.writableLocation(StandardPaths.DownloadLocation) + "/export." + suffix);
-            editor.exportedFile = download.path;
-            root.downloads = download;
-            reloadTimer.start();
-            // console.log("Download requested: " + download.path);
-            download.accept();
-        }
+        // function onDownloadRequested(download) {
+        //     let suffix = download.path.split(".").pop();
+        //     // console.log("Download request: " + download.path);
+        //     download.path = editor.getLocalFilePath(StandardPaths.writableLocation(StandardPaths.DownloadLocation) + "/export." + suffix);
+        //     editor.exportedFile = download.path;
+        //     root.downloads = download;
+        //     reloadTimer.start();
+        //     // console.log("Download requested: " + download.path);
+        //     download.accept();
+        // }
 
-        function onDownloadFinished(download) {
-            // console.log("Download finished: " + download.path);
-            reloadTimer.stop();
-            fileProgressRect.progress = 100;
-            exportFileDialog.open();
+        // function onDownloadFinished(download) {
+        //     // console.log("Download finished: " + download.path);
+        //     reloadTimer.stop();
+        //     fileProgressRect.progress = 100;
+        //     exportFileDialog.open();
+        // }
+    }
+        
+    DropArea {
+        anchors.fill: parent
+        onDropped: {
+            // TODO: should handle multiple files
+            if (drop.hasUrls) {
+                // for(var i = 0; i < drop.urls.length; i++) {
+                //     // console.log(drop.urls.length);
+                //     queue.playExternMedia(drop.urls[i]);
+                // }
+                editor.handleDrop(drop.urls[0]);
+            }
         }
     }
 }

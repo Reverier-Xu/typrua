@@ -87,13 +87,15 @@
                 'insert-before',
                 'insert-after',
                 '|',
-                'edit-mode',
-                'export'
+                'edit-mode'
             ],
             mode: 'ir',
             outline: {
-                enable: true,
+                enable: false,
                 position: 'left',
+            },
+            cache: {
+                enable: false
             },
             debugger: false,
             typewriterMode: false,
@@ -155,18 +157,17 @@
             } else {
                 vditor.setTheme("classic", "light");
             }
+
+            window.setInterval(()=>{
+                editorManager.content = vditor.getValue();
+            }, 1000);
+            vditor.vditor.outline.toggle(vditor.vditor, displayManager.outlineExpanded);
         })
     }
 
-    window.setLang = (language) => {
-        vditor.destroy();
-        initVditor(language);
-    }
-    // initVditor('zh_CN');
-
-    // window.onload = function() {
     new QWebChannel(qt.webChannelTransport, function (channel) {
         window.displayManager = channel.objects.displayManager;
+        window.editorManager = channel.objects.editorManager;
         initVditor(displayManager.language);
         displayManager.colorStyleChanged.connect(function (color) {
             if (color) {
@@ -177,7 +178,15 @@
                 document.body.style.setProperty("--base-color", "#24292e");
             }
         });
+        displayManager.outlineExpandedChanged.connect(function (expanded) {
+            vditor.vditor.outline.toggle(vditor.vditor, expanded);
+        });
+        editorManager.contentChanged.connect(function (content) {
+            vditor.setValue(content);
+        });
+        editorManager.imageInsertRequested.connect(function (imageMd) {
+            vditor.insertValue(imageMd);
+        });
     });
-    // }
 
 </script>

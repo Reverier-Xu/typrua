@@ -30,11 +30,14 @@ Q_OBJECT
                        setAlertColor NOTIFY alertColorChanged)
     Q_PROPERTY(bool sideBarExpanded READ sideBarExpanded
                        WRITE setSideBarExpanded NOTIFY sideBarExpandedChanged)
+    Q_PROPERTY(bool outlineExpanded READ outlineExpanded
+                       WRITE setOutlineExpanded NOTIFY outlineExpandedChanged)
     Q_PROPERTY(QString language READ language WRITE setLanguage NOTIFY languageChanged)
 private:
     int activeTabIndex_ = -1;
     bool colorStyle_ = false;
     bool sideBarExpanded_ = false;
+    bool outlineExpanded_ = true;
     QColor themeColor_ = QColor(0x00, 0x78, 0xd6);
     QColor alertColor_ = QColor(0xff, 0x60, 0x33);
     QString language_ = "en_US";
@@ -65,6 +68,10 @@ public:
 
     void setSideBarExpanded(bool value);
 
+    [[nodiscard]] bool outlineExpanded() const;
+
+    void setOutlineExpanded(bool value);
+
     [[nodiscard]] QColor themeColor() const;
 
     void setThemeColor(const QColor &value);
@@ -92,6 +99,8 @@ signals:
     void colorStyleChanged(bool n);
 
     void sideBarExpandedChanged(bool n);
+
+    void outlineExpandedChanged(bool n);
 
     void themeColorChanged(QColor n);
 

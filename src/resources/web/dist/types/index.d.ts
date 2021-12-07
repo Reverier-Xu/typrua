@@ -490,7 +490,7 @@ interface IPreview {
     transform?(html: string): string;
 }
 
-type IPreviewAction = "desktop" | "tablet" | "mobile" | "mp-wechat" | "zhihu";
+type IPreviewAction = "desktop" | "tablet" | "mobile";
 
 interface IPreviewActionCustom {
     /** 键名 */
