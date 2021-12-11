@@ -59,3 +59,9 @@ if you want to modify editor's source code, you can fork `https://github.com/Rev
 ## LICENSE
 
 Mozilla Public License Version 2.0.
+
+## About the Future
+
+Since the Qt Webengine API is too rudimentary (we had to use some ugly methods to implement some features), this project will probably implement the whole editor in the future using QML with a native drawing approach and a new markdown structured analysis engine based on tree-sitter. 
+
+That will be a long story.
