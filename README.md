@@ -4,6 +4,8 @@ Yet another MarkDown editor, open source!
 
 ## Development Status
 
+this README.md is written in typrua :p
+
 now it works:
 
 ![](arts/screenshot.png)
