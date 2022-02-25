@@ -5,7 +5,7 @@ Yet another MarkDown editor, open source!
 
 ====
 > Due to poor Qt Webengine APIs, this project is archived.
-> you can use marktext to instead of it.
+> you can use [marktext](https://marktext.app/) to instead of it.
 ====
 
 ## Development Status
