@@ -2,6 +2,12 @@
 
 Yet another MarkDown editor, open source!
 
+
+====
+> Due to poor Qt Webengine APIs, this project is archived.
+> you can use marktext to instead of it.
+====
+
 ## Development Status
 
 this README.md is written in typrua :p
